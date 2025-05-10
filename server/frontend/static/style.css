@@ -84,11 +84,19 @@ img{
   justify-self: center;
 }
 
-.nav_item{
+.nav-item{
   margin-left:15px;
   font-size: 20px;
   color: black;
-  align-self: center;
+  align-self: center;;
+}
+
+.nav-link {
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link.active {
+    border-bottom-color: black;
 }
 
 .username{

@@ -1,0 +1,80 @@
+.contact {
+    width: 100%;
+    margin-top:3rem;
+    margin-bottom: 6rem;
+    display: grid;
+    gap: 3rem;
+}
+
+.contact .banner {
+    width: 100%;
+    height: 400px;
+    padding: 2rem;
+    position: relative;
+    font-size: 1.5em;
+    color:white;
+    text-align: center;
+    background-image: url('car_dealership.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.contact .banner::before {
+    content: '';
+    position: absolute;
+    inset:0;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.contact-options{
+    align-self: center;
+    display:grid;
+    gap: 1rem;
+}
+
+.contact-card {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-card img {
+    width:100%;
+    object-fit: cover;
+}
+
+.contact-card .title {
+    margin: 0;
+}
+
+.contact-card .link {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: #614080;
+    text-decoration: underline;
+    text-align: center;
+    cursor: pointer;
+}
+
+.contact-card .link:hover {
+    color: black;
+}
+
+@media (max-width:1080px) {
+    .contact-card {
+        width:100%;
+        padding-inline: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card img {
+        width: 50%;
+        margin: auto;
+    }
+}
