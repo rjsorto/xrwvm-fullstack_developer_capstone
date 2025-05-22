@@ -28,8 +28,8 @@ try {
 		Dealerships.insertMany(dealerships_data.dealerships);
 	});
     Cars.deleteMany({}).then(() => {
-        Cars.insertMany(cars_data.cars)
-    })
+        Cars.insertMany(cars_data.cars);
+    });
 } catch (error) {
 	res.status(500).json({ error: 'Error fetching documents' });
 }

@@ -51,7 +51,7 @@ table{
     flex-wrap: wrap;
     column-gap: 1cm;
     overflow-wrap: normal;
-    margin-top: 1cm;
+    margin: 20px;
     align-items: flex-start;
   }
 

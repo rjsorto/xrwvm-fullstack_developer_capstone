@@ -13,9 +13,9 @@ from django.contrib.auth import login, authenticate
 import logging
 import json
 from django.views.decorators.csrf import csrf_exempt
-from .populate import initiate
+# from .populate import initiate
 
-from .models import CarMake, CarModel
+# from .models import CarMake, CarModel
 from .restapis import get_request, analyze_review_sentiments, post_review
 
 
@@ -59,6 +59,10 @@ def get_dealerships(request, state="All"):
     else:
         endpoint = "/fetchDealers/"+state
     dealerships = get_request(endpoint)
+    dealerships = sorted(dealerships, key=lambda d: d['full_name'])
+    dealerships = sorted(dealerships, key=lambda d: d['city'])
+    dealerships = sorted(dealerships, key=lambda d: d['state'])
+
     return JsonResponse({"status": 200, "dealers": dealerships})
 
 
@@ -89,7 +93,8 @@ def add_review(request):
     if (request.user.is_anonymous is False):
         data = json.loads(request.body)
         try:
-            response = post_review(data)
+            # response = post_review(data)
+            post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
             return JsonResponse({
